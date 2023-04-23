@@ -1,6 +1,6 @@
 # AddressAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Get address balance by specific address.
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let address = "address_example" // String | the requested address
 
@@ -67,7 +67,7 @@ Get address history by specific address(recent 10 days available).
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let address = "address_example" // String | the requested address
 let flag = "flag_example" // String | The last id of the last query(Paging flag) (optional)
@@ -119,7 +119,7 @@ Get address utxos by specific address(100 per page).
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let address = "address_example" // String | the requested address
 let flag = "flag_example" // String | The last id of the last query(Paging flag) (optional)

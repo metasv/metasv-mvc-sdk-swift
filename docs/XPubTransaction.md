@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **maxChangeIndex** | **Int** | Max lookahead change index when processing this transaction. | [optional] 
 **income** | **Int64** | Total received satoshis(Including all address) | [optional] 
 **outcome** | **Int64** | Total spent satoshis(Including all address) | [optional] 
-**height** | **Int** | Height for this transaction. -1 for unconfirmed | [optional] 
+**height** | **Int64** | Height for this transaction. -1 for unconfirmed | [optional] 
 **blockIndex** | **Int** | Block index for this transaction, -1 for unconfirmed | [optional] 
 **blockTime** | **Int64** | Block timestamp for this transaction, if unconfirmed, the time is first seen time. | [optional] 
 **flag** | **String** | Paging flag, format blockTimestamp_blockIndex | [optional] 

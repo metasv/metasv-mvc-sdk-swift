@@ -1,33 +1,84 @@
 # TxAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**txBroadcastPost**](TxAPI.md#txbroadcastpost) | **POST** /tx/broadcast | Broadcast tx to metasv fullnode.
+[**txBroadcastBatchPost**](TxAPI.md#txbroadcastbatchpost) | **POST** /tx/broadcast/batch | Broadcast a batch of tx to MvcApi fullnode. This endpoint use rpc sendrawtransactions.
+[**txBroadcastPost**](TxAPI.md#txbroadcastpost) | **POST** /tx/broadcast | Broadcast tx to MvcApi fullnode.
 [**txTxidGet**](TxAPI.md#txtxidget) | **GET** /tx/{txid} | Get transaction detail by specific txid.
 [**txTxidRawGet**](TxAPI.md#txtxidrawget) | **GET** /tx/{txid}/raw | Get transaction raw hex by specific txid.
-[**txTxidSeenGet**](TxAPI.md#txtxidseenget) | **GET** /tx/{txid}/seen | Whether MetaSV have seen this tx before. This is a fast approach to know if the tx exist or not.
+[**txTxidSeenGet**](TxAPI.md#txtxidseenget) | **GET** /tx/{txid}/seen | Whether MvcApi have seen this tx before. This is a fast approach to know if the tx exist or not.
 [**vinTxidDetailGet**](TxAPI.md#vintxiddetailget) | **GET** /vin/{txid}/detail | Get all output point of vins in the tx with detailed output script.
 
+
+# **txBroadcastBatchPost**
+```swift
+    open class func txBroadcastBatchPost(txRaw: [TxRaw]? = nil, completion: @escaping (_ data: BatchBroadcastResult?, _ error: Error?) -> Void)
+```
+
+Broadcast a batch of tx to MvcApi fullnode. This endpoint use rpc sendrawtransactions.
+
+This api will broadcast to MvcApi fullnode directly.
+
+### Example 
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import MvcApiClient
+
+let txRaw = [TxRaw(hex: "hex_example")] // [TxRaw] |  (optional)
+
+// Broadcast a batch of tx to MvcApi fullnode. This endpoint use rpc sendrawtransactions.
+TxAPI.txBroadcastBatchPost(txRaw: txRaw) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txRaw** | [**[TxRaw]**](TxRaw.md) |  | [optional] 
+
+### Return type
+
+[**BatchBroadcastResult**](BatchBroadcastResult.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **txBroadcastPost**
 ```swift
     open class func txBroadcastPost(txRaw: TxRaw? = nil, completion: @escaping (_ data: BroadcastResult?, _ error: Error?) -> Void)
 ```
 
-Broadcast tx to metasv fullnode.
+Broadcast tx to MvcApi fullnode.
 
-This api will broadcast to metasv fullnode directly.
+This api will broadcast to MvcApi fullnode directly. This endpoint use rpc sendrawtransaction.
 
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txRaw = TxRaw(hex: "hex_example") // TxRaw |  (optional)
 
-// Broadcast tx to metasv fullnode.
+// Broadcast tx to MvcApi fullnode.
 TxAPI.txBroadcastPost(txRaw: txRaw) { (response, error) in
     guard error == nil else {
         print(error)
@@ -73,7 +124,7 @@ This api is parsed from raw hex, you can use /tx/{txid}/raw to parse tx by yours
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txid = "txid_example" // String | the request ID to search, txhash
 let showScript = true // Bool | Return source script code or not (default false). (optional)
@@ -123,7 +174,7 @@ Get transaction raw hex by specific txid.
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txid = "txid_example" // String | the request ID to search, txhash
 
@@ -166,16 +217,16 @@ Name | Type | Description  | Notes
     open class func txTxidSeenGet(txid: String, completion: @escaping (_ data: Bool?, _ error: Error?) -> Void)
 ```
 
-Whether MetaSV have seen this tx before. This is a fast approach to know if the tx exist or not.
+Whether MvcApi have seen this tx before. This is a fast approach to know if the tx exist or not.
 
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txid = "txid_example" // String | the request ID to search, txhash
 
-// Whether MetaSV have seen this tx before. This is a fast approach to know if the tx exist or not.
+// Whether MvcApi have seen this tx before. This is a fast approach to know if the tx exist or not.
 TxAPI.txTxidSeenGet(txid: txid) { (response, error) in
     guard error == nil else {
         print(error)
@@ -221,7 +272,7 @@ Search output points by spent txid. Use this api to get detailed inputs for the 
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txid = "txid_example" // String | The txid of the vins
 

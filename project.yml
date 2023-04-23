@@ -1,13 +1,13 @@
-name: MetaSVMvcClient
+name: MvcApiClient
 targets:
-  MetaSVMvcClient:
+  MvcApiClient:
     type: framework
     platform: iOS
     deploymentTarget: "10.0"
-    sources: [MetaSVMvcClient]
+    sources: [MvcApiClient]
     info:
       path: ./Info.plist
-      version: 2.2.0
+      version: 3.0.8
     settings:
       APPLICATION_EXTENSION_API_ONLY: true
     scheme: {}

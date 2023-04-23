@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **price** | **Int64** | the price of nft. | [optional] 
 **satoshi** | **Int64** | Mvc value of the utxo(Irrelavant to token value) | [optional] 
 **satoshiString** | **String** | Mvc value of the utxo(In string format) | [optional] 
-**height** | **Int** | The height of this utxo, -1 for unconfirmed utxo. | [optional] 
+**height** | **Int64** | The height of this utxo, -1 for unconfirmed utxo. | [optional] 
 **isReady** | **Bool** | Is current nft transfered into sell contract, If not ready, the following fields will be null | [optional] 
 **sensibleId** | **String** | SensibleId of the token | [optional] 
 **metaTxid** | **String** | The metanet tx describing the nft. | [optional] 

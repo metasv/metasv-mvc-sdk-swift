@@ -1,6 +1,6 @@
 # BlockAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **blockBlockIdGet**
 ```swift
-    open class func blockBlockIdGet(blockId: String, completion: @escaping (_ data: BlockHeader?, _ error: Error?) -> Void)
+    open class func blockBlockIdGet(blockId: String, completion: @escaping (_ data: BlockHeaderIndex?, _ error: Error?) -> Void)
 ```
 
 Get block request by height or hash
@@ -19,7 +19,7 @@ Get block request by height or hash
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let blockId = "blockId_example" // String | The block id, height or hash acceptable.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlockHeader**](BlockHeader.md)
+[**BlockHeaderIndex**](BlockHeaderIndex.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 # **blockGet**
 ```swift
-    open class func blockGet(last: Int64? = nil, completion: @escaping (_ data: [BlockHeader]?, _ error: Error?) -> Void)
+    open class func blockGet(last: Int64? = nil, completion: @escaping (_ data: [BlockHeaderPage]?, _ error: Error?) -> Void)
 ```
 
 Get recent block list by paging. 30 items per page.
@@ -67,7 +67,7 @@ Get recent block list by paging. 30 items per page.
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let last = 987 // Int64 | paging flag, height of last item in last page (optional)
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[BlockHeader]**](BlockHeader.md)
+[**[BlockHeaderPage]**](BlockHeaderPage.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Get current blockchain info from full node.
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 
 // Get current blockchain info from full node.

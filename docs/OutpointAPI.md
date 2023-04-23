@@ -1,6 +1,6 @@
 # OutpointAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Get detailed info for a utxo(or txo if spent), Only outputs spent no longer than
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let txid = "txid_example" // String | The txid of the output
 let index = 987 // Int | The index of the output in the tx.

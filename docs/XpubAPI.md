@@ -1,6 +1,6 @@
 # XpubAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Get xpub address type and index. Only index under /0/70 /1/30 is valid. Otherwis
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let xpub = "xpub_example" // String | the requested xpub
 let address = "address_example" // String | the requested address
@@ -71,7 +71,7 @@ This api returns confirmed balance(same as address balance), not sumed utxos.
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let xpub = "xpub_example" // String | the xpub to search
 
@@ -119,7 +119,7 @@ Get xpub utxos by specific xpub(300 per page).
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let xpub = "xpub_example" // String | the requested xpub
 let limit = 987 // Int | The max items returned in this query(default 300), not bigger than 5000. (optional)

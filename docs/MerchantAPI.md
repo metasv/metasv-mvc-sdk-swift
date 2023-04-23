@@ -1,6 +1,6 @@
 # MerchantAPI
 
-All URIs are relative to *https://api-mvc-testnet.metasv.com*
+All URIs are relative to *https://testnet.mvcapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Selects a set of Utxos with total value higher than the given amount from a give
 ### Example 
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import MetaSVMvcClient
+import MvcApiClient
 
 let utxoPickRequest = UtxoPickRequest(addresses: ["addresses_example"], amount: 123) // UtxoPickRequest |  (optional)
 
